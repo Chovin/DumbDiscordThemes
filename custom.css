@@ -1,0 +1,671 @@
+/*
+It's a mess at the moment.
+started trying to just use [Discord Reborn](https://github.com/Jiiks/BetterDiscordApp/wiki/Themes)
+That's where the default background and tons of comments came from
+
+ */
+
+/*
+
+TODO: channel title bar :before or margin+padding to extend left to the guild bar
+TODO: adjust channel title bar bkground opacity
+TODO: new messages
+TODO: date lines
+TODO: load new random image :before button in titlebar
+TODO: long animation loop loading new random images
+	fade in - wait ~4 min for load? (switch inner/outer or :before/:after?)
+TODO: channel/member hover/active
+TODO: fix friends list
+TODO: adjust opacity of all. make more opaque?
+TODO: make other elements pop
+	username shadow/glow?
+	single line code shadow/glow?
+TODO: changing colors tooltips?
+
+Problem changing bg. img is cached
+Problem animations suck up cpu. can't seem to switch to GPU
+TOTRY: lots of :before :afters n such and just adjust opacity?
+
+ */
+
+
+
+/* put your custom css here. */
+/*.guilds-wrapper .guilds .guild, .guild-inner {
+	width: 50px;
+	height: 50px;
+}*/
+
+
+/*//META{"name":"Discord_Reborn","description":"A cozy modern dark theme. <div class='rthemedescription'> </div> <br><a class='gitbutton' href='https://github.com/0mniscient/Discord-Themes/'target='_blank'>GITHUB</a><a class='docsbutton' href='https://betterdocs.net/themes.html'target='_blank'>MORE THEMES</a><a class='serverbutton' href='https://discord.gg/MpWmqQk'target='_blank'>MY SHIT SERVER</a><br>","author":"Omniscient","version":"<span class='rversion'></span>"}/*/
+
+/* IMPORT CSS FROM GITHUB */
+/*@import url("https://rawgit.com/0mniscient/Discord-Themes/master/css/Discord%20Reborn.css");*/
+/*
+/*
+---------------------------------------------------------------------------------------------------------------------------------------------
+IMPORTANT: CHANGE DISCORDS THEME TO DARK THEME IN APPEARANCE SETTINGS FOR THIS THEME TO WORK!
+---------------------------------------------------------------------------------------------------------------------------------------------
+*/
+/*
+---------------------------------------------------------------------------------------------------------------------------------------------
+===== CUSTOMIZABLE COLORS =====
+*/
+/*:root {
+ --main-color: #057F95;
+ --hover-color: #045B6B;
+ }*/
+/*
+--------------------------------------------------------------------------------------------------------------------------------------------
+*/
+ /*
+---------------------------------------------------------------------------------------------------------------------------------------------
+===== CUSTOMIZABLE IMAGES =====
+IMPORTANT: EVERY URL MUST BE HTTPS:// IN ORDER TO WORK IN DISCORD
+RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MATCH. (YOUR CHOICE)
+--------------------------------------------------------------------------------------------------------------------------------------------
+*/
+/*Change the url in .app to change the background behind chat */
+
+/*.app, .callout-backdrop, .connecting, .titlebar {
+	left: -70px;
+	-webkit-transition: left 1s;
+}
+.app:hover, .callout-backdrop:hover, .connecting:hover, .titlebar:hover {
+	left: 0px;
+	-webkit-transition: left 1s;
+}*/
+/*.username-wrapper {
+	perspective: 150px;
+}
+
+.username-wrapper .user-name {
+	-webkit-transform: rotateX(0deg);
+	-webkit-transition: all 1s;
+
+}
+.username-wrapper .user-name:hover {
+	-webkit-transform: rotateX(30deg);
+	-webkit-transition: all .2s;
+	font-size: 24px;
+}*/
+
+.guild-channels {
+	background: -webkit-linear-gradient(right, rgba(46, 49, 54, 0.9), rgba(46, 49, 54, 0.96), rgba(46, 49, 54, 0.97),rgba(46, 49, 54, 0.98), rgba(46, 49, 54, 1.0));
+	-webkit-transition: all .5s; /*doesn't effect gradient*/
+}
+.guild-channels:hover {
+	background: -webkit-linear-gradient(right, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.93),rgba(46, 49, 54, 0.97), rgba(46, 49, 54, 1.0));
+	-webkit-transition: all .5s;
+}
+
+/*.guild-channels:hover {
+	background: -webkit-linear-gradient(right, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.95), rgba(46, 49, 54, 1.0));
+}*/
+
+.channels-wrap {
+	width: 150px;
+	padding-right: 0px;
+	margin-right: 0px;
+	-webkit-transition: all .5s;
+	z-index:2;
+	background: rgba(28, 30, 34, .0);
+}
+.channels-wrap:hover{
+	width: 240px;
+	margin-right: -90px;
+	padding-right: 0px;
+/*	opacity: .9;*/
+	-webkit-transition: all .5s;
+/*	z-index:2;*/
+
+}
+.channel {
+	width: 230px;
+	margin-right: 0px;
+	padding-right: 0px;
+}
+
+.channels-wrap header button {
+	margin: 0px -6px;
+	opacity: 0;
+	-webkit-transition: all .5s;
+}
+.channels-wrap:hover header button {
+	margin: 0px 0px;
+	opacity: 1;
+	-webkit-transition: all .5s;
+}
+
+.channels-wrap .channel-user-limit {
+	margin-right: 30px;
+	-webkit-transition: all .5s;
+}
+/*.channels-wrap header button::after {
+	width: 0;
+	padding: -1px;
+	opacity: 0;
+	-webkit-transition: all .5s;
+}*/
+
+.channels-wrap .channel-text .badge {
+	margin-right: 90px;
+	-webkit-transition: all .5s;
+}
+.channels-wrap:hover .badge {
+	margin-right: 0px;
+	-webkit-transition: all .5s;
+}
+
+.channels-wrap .btn-deafen, .channels-wrap .btn-settings {
+	opacity: .5;
+	width: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	-webkit-transition: all .5s;
+}
+.channels-wrap:hover .btn-deafen, .channels-wrap:hover .btn-settings {
+	opacity: 1;
+	width: 32px;
+	padding-left: 6px;
+	padding-right: 6px;
+	-webkit-transition: all .5s;
+}
+.channels-wrap .btn-deafen, .channels-wrap .btn-mute {
+	border-right: 0px solid #1c1e22;
+}
+.channels-wrap:hover .btn-deafen, .channels-wrap:hover .btn-mute {
+	border-right: 1px solid #1c1e22;
+}
+
+.channels-wrap button{
+	-webkit-transition: width .5s;
+}
+.channels-wrap:hover button{
+	-webkit-transition: width .5s;
+}
+
+
+/*chat*/
+.message-group.compact .emoji.jumboable {
+	width: 18px;
+	height: 18px;
+	-webkit-transition: all .25s;
+}
+.message-group.compact .emoji.jumboable:active {
+	width: 50px;
+	height: 50px;
+	-webkit-filter: drop-shadow( 0px 5px 4px rgba(30, 28, 31, 0.6) );
+	-webkit-transition: all .1s;
+}
+
+/*right bar (members)*/
+.channel-members-wrap {
+	min-width: 60px;
+	width: 60px;
+	padding-left: 0px;
+	z-index:2;
+	-webkit-transition: all .5s;
+}
+/*TODO: add gradient backgronud for both(or right) bars later*/
+/*TODO: right bar left shadow?*/
+.channel-members-wrap:hover {
+	min-width: 240px;
+	width: 240px;
+	margin-left: -180px;
+/*	z-index: 2;*/
+/*	background-image: -webkit-gradient(
+	  linear, left top, left bottom, from(rgba(50,50,50,0.8)),
+	  to(rgba(80,80,80,0.2)), color-stop(.5,#333333)
+	);*/
+/*	background: -webkit-linear-gradient(left,
+		rgba(46, 49, 54, 1.0),
+		rgba(80,80,80,0.2)
+	);*/
+	-webkit-transition: all .5s;
+}
+
+.theme-dark .channel-members {
+	-webkit-transition: all .5s;
+	background: -webkit-linear-gradient(left, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.95), rgba(46, 49, 54, 0.98), rgba(46, 49, 54, 1.0));
+	-webkit-box-shadow: -2px 0px 2px rgba(46, 49, 54, 0.5);
+}
+.theme-dark .channel-members:hover {
+	-webkit-transition: all .5s;
+/*	background: -webkit-linear-gradient(left, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.95), rgba(46, 49, 54, 1.0));*/
+	-webkit-box-shadow: -2px 0px 2px rgba(46, 49, 54, 0.8);
+}
+
+.channel-members-wrap h2 {
+	padding-left: 6px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 60px;
+	font-size: 8pt;
+}
+.channel-members-wrap h2::after {
+	content: "—";
+	opacity: 1;
+}
+.channel-members-wrap:hover h2 {
+	padding-left: 30px;
+	width: 100%;
+	font-size: 75%;
+}
+.channel-members-wrap:hover h2::after {
+	opacity: 0;
+}
+
+.channel-members-wrap .member {
+	padding-left: 5px;
+	width: 60px;
+}
+.channel-members-wrap .member-username {
+	/*width: 20px;*/
+}
+/*mr: 10*/
+.channel-members-wrap .avatar-small {
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+}
+.channel-members-wrap:hover .avatar-small {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+}
+
+.channel-members-wrap .avatar-small .status {
+	width: 6px;
+	height: 6px;
+}
+.channel-members-wrap:hover .avatar-small .status {
+	width: 10px;
+	height: 10px;
+}
+.channel-members-wrap:hover .member {
+	padding-left: 30px;
+	width: 100%;
+}
+/* WIP */
+.channel-members-wrap .channel-members .member .member-username-inner{
+	width: 30px;
+	text-overflow: clip;
+
+}
+.channel-members-wrap:hover .channel-members .member .member-username-inner {
+	width: 100%;
+	text-overflow: ellipsis;
+}
+
+
+.channels-wrap .account, .channels-wrap:hover .account,
+.channel-members-wrap h2, .channel-members-wrap:hover h2,
+.channel-members-wrap, .channel-members-wrap:hover,
+.channel-members-wrap h2::after, .channel-members-wrap:hover h2::after,
+.channel-members-wrap .member, .channel-members-wrap:hover .member,
+.channel-members-wrap .avatar-small, .channel-members-wrap:hover .avatar-small,
+.channel-members-wrap .avatar-small .status, .channel-members-wrap:hover .avatar-small .status,
+.channel-members-wrap .channel-members .member .member-username-inner,
+.channel-members-wrap:hover .channel-members .member .member-username-inner  {
+	-webkit-transition: all .5s;
+}
+
+@-webkit-keyframes customSlowReveal{
+	from {
+		left: -70px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+@-webkit-keyframes opacityBg {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+
+@-webkit-keyframes coverBgRotate {
+	0% {
+		/* 1348 591 */
+		background-image: url("https://imgur.com/RG03PyX.png");
+		-webkit-transform: translateZ(0);
+	}
+	9.99% {
+		/* 1348 591 */
+		background-image: url("https://imgur.com/RG03PyX.png");
+	}
+	50% {
+		background-image: url("https://unsplash.it/1680/1050/?random");
+	}
+/*
+	10% {
+		background-image: url("https://unsplash.it/1680/1050/?random");
+	}
+	19.99% {
+		background-image: url("https://unsplash.it/1680/1050/?random");
+	}
+	20% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.0");
+	}
+	29.99% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.0");
+	}
+	30% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.1");
+	}
+	39.99% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.1");
+	}
+	40% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.2");
+	}
+	49.99% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.2");
+	}
+	50% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.3");
+	}
+	59.99% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.3");
+	}*/
+
+
+/*	60% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.4");
+	}
+	69.99% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.4");
+	}
+	70% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.5");
+	}
+	79.99% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.5");
+	}
+	80% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.6");
+	}
+	89.99% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.6");
+	}
+	90% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.7");
+	}
+	99.99% {
+		background-image: url("https://unsplash.it/1680/1050/?random&ver=1.7");
+	}
+	100% {
+		background-image: url("https://imgur.com/RG03PyX.png");
+	}*/
+
+
+
+}
+
+
+/* tooltip */
+/* #7289da */
+.tooltip {
+	background-color: #B42926;
+}
+.tooltip.tooltip-right::after {
+	border-right-color: #B42926;
+}
+.tooltip.tooltip-bottom::after {
+	border-bottom-color: #B42926;
+}
+.tooltip.tooltip-left::after {
+	border-left-color: #B42926;
+}
+.tooltip.tooltip-top::after {
+	border-top-color: #B42926;
+}
+
+/* typing status */
+/* #36393e */
+.theme-dark .chat form .typing {
+	background-color: rgba(54, 57, 62, .0);
+}
+
+
+
+
+/* background image test */
+/* TODO: using backgrounds from momentum */
+/* 	instead used random backgrounds from unsplash */
+/* TODO: reload background button (::before:active) */
+/* TODO: reload every x interval (animation: quickly increase size after x interval) */
+/* TODO: fade-change; */
+
+/*.app {
+	background-color: #679FAE;
+	background-image: url("https://imgur.com/RG03PyX.png") !important;
+	background-size: cover !important;
+	-webkit-transition: all .5s;
+}*/
+
+/* random image of size 1349x591.. probably get a better size.. */
+/* above image is used while this one loads */
+
+/*.app > .flex-vertical {
+	background-image: url("https://unsplash.it/1680/1050/?random") !important;
+	background-size: cover !important;
+	-webkit-transition: all .5s;
+}*/
+.app, .app::after {
+	background-image: url("https://imgur.com/RG03PyX.png");
+	/*-webkit-animation: opacityBg 20s ease-in-out infinite;*/
+	background-size: cover !important;
+	/* animations are very CPU intensive. possible fix? */
+	/* http://stackoverflow.com/questions/13176746/css-keyframe-animation-cpu-usage-is-high-should-it-be-this-way */
+	-webkit-transform: translateZ(0);
+}
+/*.app::after {
+	opacity: 0;
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	content:"";
+	-webkit-animation-delay: 10s;
+	background-image: url("https://unsplash.it/1680/1050/?random");
+
+}*/
+
+
+
+/*
+   replaces chat background
+   so that channel:hover is seamless
+*/
+.flex-horizontal {
+	background-color: rgba(54, 57, 62, .7);
+}
+
+/* server-bar */
+/* #1e2124 */
+.guilds-wrapper {
+	/*background: rgba(30, 33, 36, .85);*/
+	background: rgba(30, 33, 36, .6);
+
+}
+
+/* channel-bar */
+/* v1: rgba(28, 30, 34, .0) */
+.channels-wrap {
+	background: rgba(28, 30, 34, .0);
+	background-position: 0px 0px;
+}
+.channels-wrap:hover {
+	background: rgba(28, 30, 34, .0);
+	/*background-image: url("https://imgur.com/RG03PyX.png");
+	background-position: 100px 0px;*/
+}
+/* #2e3136 */
+.guild-channels {
+	/*background: rgba(46, 49, 54, .8);*/
+	background: rgba(46, 49, 54, .35);
+}
+.guild-channels:hover {
+	background: rgba(46, 49, 54, .7);
+}
+/* #2e3136 */
+.guild-header header {
+	/*background: rgba(46, 49, 54, .9);*/
+	background: rgba(46, 49, 54, .6);
+}
+.guild-channels-wrapper:hover .guild-header header {
+	background: rgba(46, 49, 54, .7);
+}
+/* -- #282b30 */
+.guild-channels-wrapper:hover .guild-header header:hover, .guild-header.popout-open header {
+	background: rgba(40, 43, 48, .9);
+}
+/* -webkit-linear-gradient(left,#282b30 85%,#2e3136) */
+/* linear-gradient(to right,#282b30 85%,#2e3136) */
+.guild-channels .channel-text.selected {
+	background: -webkit-linear-gradient(left, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.95), rgba(46, 49, 54, 0.98), rgba(46, 49, 54, 1.0));
+}
+/* #282b30 */
+.channels-wrap .account {
+	/*background: rgba(40, 43, 48, .7);*/
+	background: rgba(40, 43, 48, .4);
+}
+.channels-wrap:hover .account {
+	background: rgba(40, 43, 48, .6);
+	background: linear-gradient(right, rgba(40, 43, 48, .0) 85%, rgba(46, 49, 54, 1.0));
+}
+
+/* chat */
+/* #36393e */
+.theme-dark .chat {
+	background-color: rgba(54, 57, 62, .0);
+}
+/* #36393e */
+.theme-dark .chat .title-wrap {
+	background-color: rgba(54, 57, 62, .8);
+}
+/* #36393e */
+.theme-dark .chat>.content {
+	background-color: rgba(54, 57, 62, .0);
+}
+/* #36393e */
+.theme-dark .messages-wrapper {
+	background-color: rgba(54, 57, 62, .0);
+}
+/* #1e2124 */
+/* #36393e :border */
+.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-thumb, .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
+	background-color: rgba(30, 33, 36, .5);
+	border-color: rgba(54, 57, 62, .5);
+}
+/* #2e3136 */
+/* #36393e :border */
+.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-track-piece, .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
+	background-color: rgba(46, 49, 54, .2);
+	border-color: rgba(54, 57, 62, .2);
+}
+
+/* member-bar */
+/* v1: rgba(46, 49, 54, 1.0) */
+.theme-dark .channel-members {
+	background: rgba(46, 49, 54, .4);
+/*	background: -webkit-linear-gradient(left, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.95), rgba(46, 49, 54, 0.98), rgba(46, 49, 54, 1.0));
+	opacity: 0.5;*/
+	-webkit-box-shadow: -2px 0px 1px rgba(46, 49, 54, 0.4);
+
+}
+.theme-dark .channel-members:hover {
+	background: rgba(46, 49, 54, .9);
+	/*opacity: 1;*/
+}
+
+
+/*.app, .flex-vertical, .theme-dark {
+	background-image: url("https://imgur.com/RG03PyX.png") !important;
+	background-size: cover !important;
+}*/
+
+
+/*this works if you make all the colors semi-transparent*/
+/*.app,
+.callout-backdrop {
+    background:url(https://imgur.com/RG03PyX.png) !important;
+    background-size:cover !important;
+}*/
+
+/*Change the url in .callout-backdrop to change the background when modal pop outs happen */
+
+/*.callout-backdrop {
+	background-color: black !important;
+	background-image: url("https://imgur.com/RG03PyX.png") !important;
+	-webkit-transition: 0.3s all ease;
+	-o-transition: 0.3s all ease;
+	-moz-transition: 0.3s all ease;
+	transition: 0.3s all ease;
+	background-size: cover !important;
+	-webkit-filter: brightness(75%);
+}*/
+
+/*Change the urls below to change the background of a profile modal pop up */
+
+/*.user-popout:before {
+    background-image: url("https://imgur.com/RG03PyX.png") !important;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-position: 50% 50%;
+    -webkit-filter: blur(3px);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}*/
+
+/*#user-profile-modal .header:before {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://imgur.com/RG03PyX.png") !important;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://imgur.com/RG03PyX.png") !important;
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-position: 50% 50%;
+    background-size: cover !important;
+    -webkit-filter: blur(3px);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+
+}*/
+
+ /*
+---------------------------------------------------------------------------------------------------------------------------------------------
+===== CREDITS =====
+URI
+BEARDDESIGN
+ZERTHOX
+THESE PEOPLE HAVE HELPED CREATE THIS THEME IN ONE WAY OR THE OTHER.
+--------------------------------------------------------------------------------------------------------------------------------------------
+*/
+/*
+---------------------------------------------------------------------------------------------------------------------------------------------
+TROUBLESHOOTING: IF YOU NEED ANY HELP GO TO HTTPS://BETTERDOCS.NET
+---------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+.message-group-blocked {
+	/*margin: 0 10px;
+	height: 10px ;*/
+	display: none;
+}
+
