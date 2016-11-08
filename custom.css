@@ -567,8 +567,11 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 .theme-dark .chat>.content {
 	background-color: rgba(54, 57, 62, .0);
 }
+/* put chat behind title */
+/* TODO: cut off the scroll bar */
 /* #36393e */
 .theme-dark .messages-wrapper {
+	margin-top: -56px;
 	background-color: rgba(54, 57, 62, .0);
 }
 /* #1e2124 */
@@ -582,18 +585,25 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 .theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-track-piece, .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
 	background-color: rgba(46, 49, 54, .2);
 	border-color: rgba(54, 57, 62, .2);
+	margin-top: 56px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
 }
+/* red */
+/* #f04747 */
 
 /* member-bar */
 /* v1: rgba(46, 49, 54, 1.0) */
 .theme-dark .channel-members {
 	background: rgba(46, 49, 54, .4);
+	/*-webkit-filter: blur(.05em); // gets annoying */
 /*	background: -webkit-linear-gradient(left, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.95), rgba(46, 49, 54, 0.98), rgba(46, 49, 54, 1.0));
 	opacity: 0.5;*/
 	-webkit-box-shadow: -2px 0px 1px rgba(46, 49, 54, 0.4);
 
 }
 .theme-dark .channel-members:hover {
+	/*-webkit-filter: blur(0px);*/
 	background: rgba(46, 49, 54, .9);
 	/*opacity: 1;*/
 }
