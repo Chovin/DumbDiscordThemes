@@ -558,6 +558,10 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	left: -150px;
 	background-color: rgba(54, 57, 62, .7);
 }
+/* why no work? */
+.theme-dark .chat .title-wrap .title .channel-name {
+	text-shadow: -1px 1px 3px rgba(26, 20, 20, .4);
+}
 /* chat */
 /* #36393e */
 .theme-dark .chat {
@@ -596,6 +600,14 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 .theme-dark .channel-members:hover {
 	background: rgba(46, 49, 54, .9);
 	/*opacity: 1;*/
+}
+
+/* messages */
+.message-text .username-wrapper {
+	text-shadow: 0px 1px 5px rgba(46, 49, 54, 1);
+}
+.message-text .message-content  {
+	text-shadow: 0px 1px 5px rgba(46, 49, 54, .7);
 }
 
 
