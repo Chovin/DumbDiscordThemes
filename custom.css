@@ -21,6 +21,8 @@ TODO: make other elements pop
 	username shadow/glow?
 	single line code shadow/glow?
 TODO: changing colors tooltips?
+TODO: have chat continue above behind channel title bar (blurred)
+TOTRY: hue-rotate based on bg color? any way to filter? to make text pop more
 
 Problem changing bg. img is cached
 Problem animations suck up cpu. can't seem to switch to GPU
@@ -540,14 +542,26 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	background: linear-gradient(right, rgba(40, 43, 48, .0) 85%, rgba(46, 49, 54, 1.0));
 }
 
+/* title */
+/* #36393e */
+.theme-dark .chat .title-wrap {
+	z-index: 1;
+	/* -webkit-backdrop-filter: blur(1px) //when :'( */
+	background-color: rgba(54, 57, 62, .7);
+}
+.theme-dark .chat .title-wrap::before {
+	content: " ";
+	height: 56px;
+	width: 150px;
+	position: absolute;
+	top: 0;
+	left: -150px;
+	background-color: rgba(54, 57, 62, .7);
+}
 /* chat */
 /* #36393e */
 .theme-dark .chat {
 	background-color: rgba(54, 57, 62, .0);
-}
-/* #36393e */
-.theme-dark .chat .title-wrap {
-	background-color: rgba(54, 57, 62, .8);
 }
 /* #36393e */
 .theme-dark .chat>.content {
