@@ -574,6 +574,9 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	margin-top: -56px;
 	background-color: rgba(54, 57, 62, .0);
 }
+.chat .new-messages-bar {
+	top: 56px;
+}
 /* #1e2124 */
 /* #36393e :border */
 .theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-thumb, .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
