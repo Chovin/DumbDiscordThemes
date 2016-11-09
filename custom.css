@@ -451,14 +451,14 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 /* random image of size 1349x591.. probably get a better size.. */
 /* above image is used while this one loads */
 
-/*.app > .flex-vertical {
+.app > .flex-vertical {
 	background-image: url("https://unsplash.it/1680/1050/?random") !important;
 	background-size: cover !important;
 	-webkit-transition: all .5s;
-}*/
+}
 .app, .app::after {
-	background-image: url("https://unsplash.it/1680/1050/?random");
-	/*background-image: url("https://imgur.com/RG03PyX.png");*/
+	/*background-image: url("https://unsplash.it/1680/1050/?random");*/
+	background-image: url("https://imgur.com/RG03PyX.png");
 	/*-webkit-animation: opacityBg 20s ease-in-out infinite;*/
 	background-size: cover !important;
 	/* animations are very CPU intensive. possible fix? */
