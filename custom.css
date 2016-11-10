@@ -567,9 +567,15 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 .theme-dark .chat>.content {
 	background-color: rgba(54, 57, 62, .0);
 }
+/* put chat behind title */
+/* TODO: cut off the scroll bar */
 /* #36393e */
 .theme-dark .messages-wrapper {
+	margin-top: -56px;
 	background-color: rgba(54, 57, 62, .0);
+}
+.chat .new-messages-bar {
+	top: 56px;
 }
 /* #1e2124 */
 /* #36393e :border */
@@ -582,6 +588,9 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 .theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-track-piece, .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
 	background-color: rgba(46, 49, 54, .2);
 	border-color: rgba(54, 57, 62, .2);
+	margin-top: 56px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
 }
 /* dividers: new msgs + time/date differences */
 .chat .divider>div {
@@ -602,6 +611,7 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 
 }
 .theme-dark .channel-members:hover {
+	/*-webkit-filter: blur(0px);*/
 	background: rgba(46, 49, 54, .9);
 	/*opacity: 1;*/
 }
