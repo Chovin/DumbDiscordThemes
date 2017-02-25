@@ -7,6 +7,7 @@ That's where the default background and tons of comments came from
 
 /*
 
+TODO: develop with LiveStyle on discord webapp
 TODO: channel title bar :before or margin+padding to extend left to the guild bar
 TODO: adjust channel title bar bkground opacity
 TODO: new messages
@@ -455,8 +456,11 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	background-image: url("https://unsplash.it/1680/1050/?random") !important;
 	background-size: cover !important;
 	-webkit-transition: all .5s;
+	background-color: rgba(54, 57, 62, .7);
+
 }
-.app, .app::after {
+/*background if unsplash doesn't load*/
+.app, .app::after{
 	/*background-image: url("https://unsplash.it/1680/1050/?random");*/
 	background-image: url("https://imgur.com/RG03PyX.png");
 	/*-webkit-animation: opacityBg 20s ease-in-out infinite;*/
@@ -465,6 +469,18 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	/* http://stackoverflow.com/questions/13176746/css-keyframe-animation-cpu-usage-is-high-should-it-be-this-way */
 	-webkit-transform: translateZ(0);
 }
+/*channel topic modal background*/
+.callout-backdrop {
+	background-image: url("https://unsplash.it/1680/1050/?random") !important;
+	background-size: cover !important;
+	-webkit-transform: translateZ(0);
+}
+/*channel topic modal*/
+.markdown-modal {
+	/*-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);;*/
+}
+
 /*.app::after {
 	opacity: 0;
 	position: absolute;
