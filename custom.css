@@ -7,6 +7,7 @@ That's where the default background and tons of comments came from
 
 /*
 
+TODO: develop with LiveStyle on discord webapp
 TODO: channel title bar :before or margin+padding to extend left to the guild bar
 TODO: adjust channel title bar bkground opacity
 TODO: new messages
@@ -92,18 +93,29 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	font-size: 24px;
 }*/
 
-.guild-channels {
+.guild-channels, .private-channels {
 	background: -webkit-linear-gradient(right, rgba(46, 49, 54, 0.9), rgba(46, 49, 54, 0.96), rgba(46, 49, 54, 0.97),rgba(46, 49, 54, 0.98), rgba(46, 49, 54, 1.0));
 	-webkit-transition: all .5s; /*doesn't effect gradient*/
 }
-.guild-channels:hover {
+.guild-channels:hover, .private-channels:hover {
 	background: -webkit-linear-gradient(right, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.93),rgba(46, 49, 54, 0.97), rgba(46, 49, 54, 1.0));
 	-webkit-transition: all .5s;
 }
-
+.private-channels .scroller {
+	overflow-x: hidden;
+}
+.search-bar-inner {
+	margin-left: -13px;
+	-webkit-transition: all .5s;
+}
+.private-channels:hover .search-bar-inner {
+	margin-left: 0px;
+	-webkit-transition: all .5s;
+}
 /*.guild-channels:hover {
 	background: -webkit-linear-gradient(right, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.95), rgba(46, 49, 54, 1.0));
 }*/
+
 
 .channels-wrap {
 	width: 150px;
@@ -309,7 +321,7 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 .channel-members-wrap .avatar-small, .channel-members-wrap:hover .avatar-small,
 .channel-members-wrap .avatar-small .status, .channel-members-wrap:hover .avatar-small .status,
 .channel-members-wrap .channel-members .member .member-username-inner,
-.channel-members-wrap:hover .channel-members .member .member-username-inner  {
+.channel-members-wrap:hover .channel-members .member .member-username-inner {
 	-webkit-transition: all .5s;
 }
 
@@ -425,6 +437,14 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	border-top-color: #B42926;
 }
 
+/* loading-spinner? */
+/*.spinner-chasing-dots .spinner-item {
+	background-color: #B42926;
+}
+.spinner-wandering-cubes .spinner-item {
+	background-color: #B42926;
+}*/
+
 /* typing status */
 /* #36393e */
 .theme-dark .chat form .typing {
@@ -455,8 +475,10 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	background-image: url("https://unsplash.it/1680/1050/?random") !important;
 	background-size: cover !important;
 	-webkit-transition: all .5s;
+	background-color: rgba(54, 57, 62, .7);
 }
-.app, .app::after {
+/*background if unsplash doesn't load*/
+.app, .app::after{
 	/*background-image: url("https://unsplash.it/1680/1050/?random");*/
 	background-image: url("https://imgur.com/RG03PyX.png");
 	/*-webkit-animation: opacityBg 20s ease-in-out infinite;*/
@@ -465,6 +487,18 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	/* http://stackoverflow.com/questions/13176746/css-keyframe-animation-cpu-usage-is-high-should-it-be-this-way */
 	-webkit-transform: translateZ(0);
 }
+/*channel topic modal background*/
+.callout-backdrop {
+	background-image: url("https://unsplash.it/1680/1050/?random") !important;
+	background-size: cover !important;
+	-webkit-transform: translateZ(0);
+}
+/*channel topic modal*/
+.markdown-modal {
+	/*-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);;*/
+}
+
 /*.app::after {
 	opacity: 0;
 	position: absolute;
@@ -508,24 +542,34 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	background-position: 100px 0px;*/
 }
 /* #2e3136 */
-.guild-channels {
+.guild-channels, .private-channels {
 	/*background: rgba(46, 49, 54, .8);*/
 	background: rgba(46, 49, 54, .35);
 }
-.guild-channels:hover {
+.guild-channels:hover, .private-channels:hover {
 	background: rgba(46, 49, 54, .7);
 }
 /* #2e3136 */
-.guild-header header {
+.guild-header header, .search-bar{
 	/*background: rgba(46, 49, 54, .9);*/
-	background: rgba(46, 49, 54, .6);
+	background: rgba(46, 49, 54, .3);
 }
-.guild-channels-wrapper:hover .guild-header header {
+.search-bar {
+	background: rgba(46, 49, 54, .25);
+}
+.guild-channels-wrapper:hover .guild-header header,
+.private-channels:hover .search-bar {
 	background: rgba(46, 49, 54, .7);
 }
 /* -- #282b30 */
-.guild-channels-wrapper:hover .guild-header header:hover, .guild-header.popout-open header {
+.guild-channels-wrapper:hover .guild-header header:hover,
+.guild-header.popout-open header,
+.private-channels:hover .search-bar:hover {
 	background: rgba(40, 43, 48, .9);
+}
+.private-channels:hover .search-bar,
+.private-channels:hover .search-bar:hover {
+	transition: background-color .15s ease;
 }
 /* -webkit-linear-gradient(left,#282b30 85%,#2e3136) */
 /* linear-gradient(to right,#282b30 85%,#2e3136) */
@@ -544,12 +588,17 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 
 /* title */
 /* #36393e */
-.theme-dark .chat .title-wrap {
+.theme-dark .chat .title-wrap,
+#friends .friends-header {
 	z-index: 1;
 	/* -webkit-backdrop-filter: blur(1px) //when :'( */
 	background-color: rgba(54, 57, 62, .7);
 }
-.theme-dark .chat .title-wrap::before {
+#friends .friends-header {
+	position: relative;
+}
+.theme-dark .chat .title-wrap::before,
+#friends .friends-header::before {
 	content: " ";
 	height: 56px;
 	width: 150px;
@@ -558,18 +607,31 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	left: -150px;
 	background-color: rgba(54, 57, 62, .7);
 }
+/* why no work? */
+.theme-dark .chat .title-wrap .title .channel-name {
+	text-shadow: -1px 1px 3px rgba(26, 20, 20, .4);
+}
 /* chat */
 /* #36393e */
-.theme-dark .chat {
+.theme-dark .chat, #friends .friends-table {
 	background-color: rgba(54, 57, 62, .0);
 }
 /* #36393e */
 .theme-dark .chat>.content {
 	background-color: rgba(54, 57, 62, .0);
 }
+/* put chat behind title */
+/* TODO: cut off the scroll bar */
 /* #36393e */
 .theme-dark .messages-wrapper {
+	margin-top: -56px;
 	background-color: rgba(54, 57, 62, .0);
+}
+.chat .new-messages-bar {
+	top: 56px;
+}
+.flex-spacer, #friends {
+	overflow: visible;
 }
 /* #1e2124 */
 /* #36393e :border */
@@ -582,6 +644,9 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 .theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-track-piece, .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
 	background-color: rgba(46, 49, 54, .2);
 	border-color: rgba(54, 57, 62, .2);
+	margin-top: 56px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
 }
 /* dividers: new msgs + time/date differences */
 .chat .divider>div {
@@ -602,8 +667,17 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 
 }
 .theme-dark .channel-members:hover {
+	/*-webkit-filter: blur(0px);*/
 	background: rgba(46, 49, 54, .9);
 	/*opacity: 1;*/
+}
+
+/* messages */
+.message-text .username-wrapper {
+	text-shadow: 0px 1px 5px rgba(46, 49, 54, 1);
+}
+.message-text .message-content  {
+	text-shadow: 0px 1px 5px rgba(46, 49, 54, .7);
 }
 
 
@@ -692,3 +766,31 @@ TROUBLESHOOTING: IF YOU NEED ANY HELP GO TO HTTPS://BETTERDOCS.NET
 	display: none;
 }
 
+
+
+
+.theme-dark .chat > .content, .theme-dark .friends-table, .theme-dark .messages-wrapper {
+	background-color: rgba(54, 57, 62, .0);
+}
+
+.theme-dark #friends {
+	background-color: rgba(54, 57, 62, .0);
+}
+
+.theme-dark #friends .friends-header {
+	background-color: rgba(54, 57, 62, .7);
+}
+
+
+
+.theme-dark #friends .friends-header .tab-bar .tab-bar-item.selected {
+	background-color: hsla(0,0%,100%,.8);
+}
+
+
+
+
+
+.theme-dark #friends .friends-table .friends-row:hover {
+	background: rgba(54, 57, 62, .7);
+}
