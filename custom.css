@@ -588,12 +588,17 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 
 /* title */
 /* #36393e */
-.theme-dark .chat .title-wrap {
+.theme-dark .chat .title-wrap,
+#friends .friends-header {
 	z-index: 1;
 	/* -webkit-backdrop-filter: blur(1px) //when :'( */
 	background-color: rgba(54, 57, 62, .7);
 }
-.theme-dark .chat .title-wrap::before {
+#friends .friends-header {
+	position: relative;
+}
+.theme-dark .chat .title-wrap::before,
+#friends .friends-header::before {
 	content: " ";
 	height: 56px;
 	width: 150px;
