@@ -552,10 +552,10 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 /* #2e3136 */
 .guild-header header, .search-bar{
 	/*background: rgba(46, 49, 54, .9);*/
-	background: rgba(46, 49, 54, .6);
+	background: rgba(46, 49, 54, .3);
 }
 .search-bar {
-	background: rgba(46, 49, 54, .5);
+	background: rgba(46, 49, 54, .25);
 }
 .guild-channels-wrapper:hover .guild-header header,
 .private-channels:hover .search-bar {
