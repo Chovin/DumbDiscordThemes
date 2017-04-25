@@ -512,7 +512,10 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 
 }*/
 
-
+.theme-dark .layer,
+.theme-dark .layers {
+	background: rgba(0,0,0,0);
+}
 
 /*
    replaces chat background
