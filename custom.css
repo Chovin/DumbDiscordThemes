@@ -93,11 +93,15 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	font-size: 24px;
 }*/
 
-.guild-channels, .private-channels {
+[class*=container-] {
+	background: rgba(46, 49, 54, 0.1);
+}
+
+[class*=channels-], .private-channels {
 	background: -webkit-linear-gradient(right, rgba(46, 49, 54, 0.9), rgba(46, 49, 54, 0.96), rgba(46, 49, 54, 0.97),rgba(46, 49, 54, 0.98), rgba(46, 49, 54, 1.0));
 	-webkit-transition: all .5s; /*doesn't effect gradient*/
 }
-.guild-channels:hover, .private-channels:hover {
+[class*=channels-]:hover, .private-channels:hover {
 	background: -webkit-linear-gradient(right, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.93),rgba(46, 49, 54, 0.97), rgba(46, 49, 54, 1.0));
 	-webkit-transition: all .5s;
 }
@@ -112,12 +116,12 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	margin-left: 0px;
 	-webkit-transition: all .5s;
 }
-/*.guild-channels:hover {
+/*[class*=channels-]:hover {
 	background: -webkit-linear-gradient(right, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.95), rgba(46, 49, 54, 1.0));
 }*/
 
 
-.channels-wrap {
+[class*=channels-] {
 	width: 150px;
 	padding-right: 0px;
 	margin-right: 0px;
@@ -125,7 +129,7 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	z-index:2;
 	background: rgba(28, 30, 34, .0);
 }
-.channels-wrap:hover{
+[class*=channels-]:hover{
 	width: 240px;
 	margin-right: -90px;
 	padding-right: 0px;
@@ -140,62 +144,66 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	padding-right: 0px;
 }
 
-.channels-wrap header button {
+[class*=channels-] header button {
 	margin: 0px -6px;
 	opacity: 0;
 	-webkit-transition: all .5s;
 }
-.channels-wrap:hover header button {
+[class*=channels-]:hover header button {
 	margin: 0px 0px;
 	opacity: 1;
 	-webkit-transition: all .5s;
 }
 
-.channels-wrap .channel-user-limit {
+[class*=channels-] .channel-user-limit {
 	margin-right: 30px;
 	-webkit-transition: all .5s;
 }
-/*.channels-wrap header button::after {
+/*[class*=channels-] header button::after {
 	width: 0;
 	padding: -1px;
 	opacity: 0;
 	-webkit-transition: all .5s;
 }*/
 
-.channels-wrap .channel-text .badge {
+[class*=channels-] .channel-text .badge {
 	margin-right: 90px;
 	-webkit-transition: all .5s;
 }
-.channels-wrap:hover .badge {
+[class*=channels-]:hover .badge {
 	margin-right: 0px;
 	-webkit-transition: all .5s;
 }
 
-.channels-wrap .btn-deafen, .channels-wrap .btn-settings {
+[class*=channels-] .btn-deafen, 
+[class*=channels-] .btn-settings {
 	opacity: .5;
 	width: 0px;
 	padding-left: 0px;
 	padding-right: 0px;
 	-webkit-transition: all .5s;
 }
-.channels-wrap:hover .btn-deafen, .channels-wrap:hover .btn-settings {
+[class*=channels-]:hover .btn-deafen, 
+[class*=channels-]:hover .btn-settings {
 	opacity: 1;
 	width: 32px;
 	padding-left: 6px;
 	padding-right: 6px;
 	-webkit-transition: all .5s;
 }
-.channels-wrap .btn-deafen, .channels-wrap .btn-mute {
+[class*=channels-] .btn-deafen, 
+[class*=channels-] .btn-mute {
 	border-right: 0px solid #1c1e22;
 }
-.channels-wrap:hover .btn-deafen, .channels-wrap:hover .btn-mute {
+[class*=channels-]:hover .btn-deafen, 
+[class*=channels-]:hover .btn-mute {
 	border-right: 1px solid #1c1e22;
 }
 
-.channels-wrap button{
+[class*=channels-] button{
 	-webkit-transition: width .5s;
 }
-.channels-wrap:hover button{
+[class*=channels-]:hover button{
 	-webkit-transition: width .5s;
 }
 
@@ -299,7 +307,7 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 }
 .channel-members-wrap:hover .member {
 	padding-left: 30px;
-	width: 100%;
+	width: 100% !important;
 }
 /* WIP */
 .channel-members-wrap .channel-members .member .member-username-inner{
@@ -313,15 +321,28 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 }
 
 
-.channels-wrap .account, .channels-wrap:hover .account,
-.channel-members-wrap h2, .channel-members-wrap:hover h2,
-.channel-members-wrap, .channel-members-wrap:hover,
-.channel-members-wrap h2::after, .channel-members-wrap:hover h2::after,
-.channel-members-wrap .member, .channel-members-wrap:hover .member,
-.channel-members-wrap .avatar-small, .channel-members-wrap:hover .avatar-small,
-.channel-members-wrap .avatar-small .status, .channel-members-wrap:hover .avatar-small .status,
+[class*=channels-] .account, 
+[class*=channels-]:hover .account,
+.chat [class*=titleWrapper-],
+.chat form,
+.channel-members-wrap h2, 
+.channel-members-wrap:hover h2,
+.channel-members-wrap, 
+.channel-members-wrap:hover,
+.channel-members-wrap h2::after, 
+.channel-members-wrap:hover h2::after,
+.channel-members-wrap .member, 
+.channel-members-wrap:hover .member,
+.channel-members-wrap .avatar-small, 
+.channel-members-wrap:hover .avatar-small,
+.channel-members-wrap .avatar-small .status, 
+.channel-members-wrap:hover .avatar-small .status,
 .channel-members-wrap .channel-members .member .member-username-inner,
-.channel-members-wrap:hover .channel-members .member .member-username-inner {
+.channel-members-wrap:hover .channel-members .member .member-username-inner,
+[class*=channels-] [class*=flex-] + [class*=container-]>[class*=flex-],
+[class*=channels-]:hover [class*=flex-] + [class*=container-]>[class*=flex-],
+[class*=channels-] [class*=flex-] + [class*=container-]>[class*=flex-]>div,
+[class*=channels-]:hover [class*=flex-] + [class*=container-]>[class*=flex-]>div {
 	-webkit-transition: all .5s;
 }
 
@@ -470,8 +491,8 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 
 /* random image of size 1349x591.. probably get a better size.. */
 /* above image is used while this one loads */
-
-.app > .flex-vertical {
+.app .layers,
+.app .layers .layer>[class*=container-] {
 	background-image: url("https://unsplash.it/1680/1050/?random") !important;
 	background-size: cover !important;
 	-webkit-transition: all .5s;
@@ -517,39 +538,81 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	background: rgba(0,0,0,0);
 }
 
+#app-mount>[class*=titleBar-] {
+	background: rgba(30, 33, 36, .85);
+}
+
+/* channel title bar */
+.theme-dark>[class*=title-] {
+	background: rgba(46, 49, 54, .8);
+	-webkit-transition: all .3s;
+}
+
+.theme-dark>[class*=title-]:hover {
+	background: rgba(46, 49, 54, .9);
+}
+
+
+/* chat form */
+.theme-dark .chat form {
+	background: transparent;
+}
+
+/* ? */
+.theme-dark>[class*=inner-]:hover {
+	background: rgba(46, 49, 54, .8);
+}
+
+/* bring back the right side of discord
+   on long channel dscriptions */
+.chat {
+	width: 0;
+}
+
+/* channel list */
+[class*=channels-] [class*=flexChild-]{
+	background: rgba(46, 49, 54, .5);
+}
+
 /*
    replaces chat background
    so that channel:hover is seamless
 */
-.flex-horizontal {
-	background-color: rgba(54, 57, 62, .7);
+.layer>[class*=flex-]>[class*=flex-] {
+	background-color: rgba(54, 57, 62, .7) !important;
 }
 
 /* server-bar */
 /* #1e2124 */
 .guilds-wrapper {
 	/*background: rgba(30, 33, 36, .85);*/
-	background: rgba(30, 33, 36, .6);
+	background: rgba(30, 33, 36, .85);
 
 }
 
 /* channel-bar */
 /* v1: rgba(28, 30, 34, .0) */
-.channels-wrap {
+[class*=channels-] {
 	background: rgba(28, 30, 34, .0);
 	background-position: 0px 0px;
 }
-.channels-wrap:hover {
+[class*=channels-]:hover {
 	background: rgba(28, 30, 34, .0);
 	/*background-image: url("https://imgur.com/RG03PyX.png");
 	background-position: 100px 0px;*/
 }
+
+/* remove border radius on channel column */
+[class*=base-] {
+	border-radius: 0;
+}
+
 /* #2e3136 */
-.guild-channels, .private-channels {
+[class*=channels-], .private-channels {
 	/*background: rgba(46, 49, 54, .8);*/
 	background: rgba(46, 49, 54, .35);
 }
-.guild-channels:hover, .private-channels:hover {
+[class*=channels-]:hover, .private-channels:hover {
 	background: rgba(46, 49, 54, .7);
 }
 /* #2e3136 */
@@ -560,12 +623,12 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 .search-bar {
 	background: rgba(46, 49, 54, .25);
 }
-.guild-channels-wrapper:hover .guild-header header,
+[class*=channels-]-wrapper:hover .guild-header header,
 .private-channels:hover .search-bar {
 	background: rgba(46, 49, 54, .7);
 }
 /* -- #282b30 */
-.guild-channels-wrapper:hover .guild-header header:hover,
+[class*=channels-]-wrapper:hover .guild-header header:hover,
 .guild-header.popout-open header,
 .private-channels:hover .search-bar:hover {
 	background: rgba(40, 43, 48, .9);
@@ -576,15 +639,15 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 }
 /* -webkit-linear-gradient(left,#282b30 85%,#2e3136) */
 /* linear-gradient(to right,#282b30 85%,#2e3136) */
-.guild-channels .channel-text.selected {
+[class*=channels-] .channel-text.selected {
 	background: -webkit-linear-gradient(left, rgba(46, 49, 54, 0.7), rgba(46, 49, 54, 0.95), rgba(46, 49, 54, 0.98), rgba(46, 49, 54, 1.0));
 }
 /* #282b30 */
-.channels-wrap .account {
+[class*=channels-] .account {
 	/*background: rgba(40, 43, 48, .7);*/
 	background: rgba(40, 43, 48, .4);
 }
-.channels-wrap:hover .account {
+[class*=channels-]:hover .account {
 	background: rgba(40, 43, 48, .6);
 	background: linear-gradient(right, rgba(40, 43, 48, .0) 85%, rgba(46, 49, 54, 1.0));
 }
@@ -611,7 +674,7 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	background-color: rgba(54, 57, 62, .7);
 }
 /* why no work? */
-.theme-dark .chat .title-wrap .title .channel-name {
+.theme-dark .chat .title-wrap>[class*=title-] [class*=channelName-] {
 	text-shadow: -1px 1px 3px rgba(26, 20, 20, .4);
 }
 /* chat */
@@ -638,13 +701,15 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 }
 /* #1e2124 */
 /* #36393e :border */
-.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-thumb, .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
+.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-thumb, 
+.theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
 	background-color: rgba(30, 33, 36, .5);
 	border-color: rgba(54, 57, 62, .5);
 }
 /* #2e3136 */
 /* #36393e :border */
-.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-track-piece, .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
+.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-track-piece, 
+.theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
 	background-color: rgba(46, 49, 54, .2);
 	border-color: rgba(54, 57, 62, .2);
 	margin-top: 56px;
