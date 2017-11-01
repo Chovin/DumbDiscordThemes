@@ -552,6 +552,19 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 	background: rgba(46, 49, 54, .9);
 }
 
+/* move title and chat form when hover over channels */
+[class*=channels-]+.chat [class*=titleWrapper-] {
+	padding-left: 0px;
+}
+
+[class*=channels-]:hover+.chat [class*=titleWrapper-] {
+	padding-left: 90px;
+}
+
+[class*=channels-]:hover+.chat form  {
+	padding-left: 100px;
+}
+
 
 /* chat form */
 .theme-dark .chat form {
