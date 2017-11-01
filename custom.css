@@ -339,10 +339,10 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 .channel-members-wrap:hover .avatar-small .status,
 .channel-members-wrap .channel-members .member .member-username-inner,
 .channel-members-wrap:hover .channel-members .member .member-username-inner,
-[class*=channels-] [class*=flex-] + [class*=container-]>[class*=flex-],
-[class*=channels-]:hover [class*=flex-] + [class*=container-]>[class*=flex-],
-[class*=channels-] [class*=flex-] + [class*=container-]>[class*=flex-]>div,
-[class*=channels-]:hover [class*=flex-] + [class*=container-]>[class*=flex-]>div {
+[class*=channels-] div + [class*=container-]>[class*=flex-],
+[class*=channels-]:hover div + [class*=container-]>[class*=flex-],
+[class*=channels-] div + [class*=container-]>[class*=flex-]>div,
+[class*=channels-]:hover div + [class*=container-]>[class*=flex-]>div {
 	-webkit-transition: all .5s;
 }
 
@@ -621,35 +621,35 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 }
 
 /* user mute/deafen/settings buttons */
-[class*=channels-] [class*=flex-] + [class*=container-]>[class*=flex-] {
+[class*=channels-] div + [class*=container-]>[class*=flex-] {
 	position: relative;
 	right: 20px;
 	margin-right:0px;
 	
 }
-[class*=channels-]:hover [class*=flex-] + [class*=container-]>[class*=flex-] {
+[class*=channels-]:hover div + [class*=container-]>[class*=flex-] {
 	margin-right:-20px;
 }
-[class*=channels-] [class*=flex-] + [class*=container-]>[class*=flex-]>div {
+[class*=channels-] div + [class*=container-]>[class*=flex-]>div {
 	margin-right:-30px;
 	opacity: 0;
 	
 }
-[class*=channels-]:hover [class*=flex-] + [class*=container-]>[class*=flex-]>div {
+[class*=channels-]:hover div + [class*=container-]>[class*=flex-]>div {
 	margin-right:0px;
 	opacity: 1;
 }
 /* last thing has a different format */
-[class*=channels-]:hover [class*=flex-] + [class*=container-]>[class*=flex-]>div:last-child {
+[class*=channels-]:hover div + [class*=container-]>[class*=flex-]>div:last-child {
 	opacity: .6;
 	/* background-color no work */
 	-webkit-transition: all .5s, background-color 0s;
 }
-[class*=channels-] [class*=flex-] + [class*=container-]>[class*=flex-]>div:last-child:hover {
+[class*=channels-] div + [class*=container-]>[class*=flex-]>div:last-child:hover {
 	opacity: 1;
 	-webkit-transition: all 0s;
 }
-[class*=channels-] [class*=flex-] + [class*=container-]>[class*=flex-]>div:first-child {
+[class*=channels-] div + [class*=container-]>[class*=flex-]>div:first-child {
 	opacity: 1;
 }
 
