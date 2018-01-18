@@ -491,13 +491,18 @@ RECOMMENDATIONS: EVERY URL AT THE BOTTOM SHOULD BE THE SAME TO MAKE THE THEME MA
 
 /* random image of size 1349x591.. probably get a better size.. */
 /* above image is used while this one loads */
-.app .layers,
-.app .layers .layer>[class*=container-] {
+.app [class*=layers-],
+.app [class*=layers-] [class*=layer-] {
 	background-image: url("https://unsplash.it/1680/1050/?random") !important;
 	background-size: cover !important;
 	-webkit-transition: all .5s;
 	background-color: rgba(54, 57, 62, .7);
 }
+
+.app [class*=layers-] [class*=layer-]>[class*=container-] {
+	background-color: rgba(54, 57, 62, .7);
+}
+
 /*background if unsplash doesn't load*/
 .app, .app::after{
 	/*background-image: url("https://unsplash.it/1680/1050/?random");*/
